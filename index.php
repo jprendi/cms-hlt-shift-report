@@ -221,6 +221,10 @@
 
     <!-- list other directories -->
 <div id="directory-listing" class="container-fluid">
+  <div class="alert alert-warning" role="alert">
+    <i class="bi bi-exclamation-triangle-fill"></i>
+    <strong>Reminder:</strong> This tool is a summary helper. Always verify these rates by inspecting the full diagnostic plots on <a href="https://cmsoms.cern.ch/" target="_blank" class="alert-link">OMS</a>.
+  </div>
   <h4>HLT Shift Report</h4>
   <iframe src="hlt_shift_report.html" style="width:100%; height:700px; border:1px solid #ddd; border-radius:6px;"></iframe>
 </div>
