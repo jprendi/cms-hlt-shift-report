@@ -266,8 +266,8 @@ def generate_recent_reports():
 <body>
 <div class="instructions">
   <strong>Instructions:</strong> Select all content in the box below (Cmd+A or Ctrl+A inside the box),
-  copy (Cmd+C), then paste directly into the CKEditor field on the rctools page.
-  Hyperlinks will be preserved automatically.
+  copy (Cmd+C), then paste directly into the editor field on the rctools page.
+  Hyperlinks should be preserved automatically.
 </div>
 <div class="report-box" id="report" contenteditable="true">
 {html_body}
