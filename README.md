@@ -1,6 +1,6 @@
 # HLT Shift Report Generator
 
-This tool queries relevant rates from [OMS](https://cmsoms.cern.ch/) using the [oms-api-client](https://gitlab.cern.ch/cmsoms/oms-api-client/-/tree/master?ref_type=heads) and generates a formatted report for HLT shifts.
+This tool queries relevant rates from [OMS](https://cmsoms.cern.ch/) using the [oms-api-client](https://gitlab.cern.ch/cmsoms/oms-api-client/-/tree/master?ref_type=heads) and generates a formatted report for HLT shifts. A personal example of such an output can be found [here](https://jprendi.web.cern.ch/cms-hlt-shift-report/). 
 
 ## ⚠️ Important Note
 **This tool is a helper for summarizing rates, but it does NOT replace manual plot inspection.**
