@@ -1,6 +1,6 @@
 # Quick start
 
-This tool queries relevant rates from OMS using the (oms-api-client)[https://gitlab.cern.ch/cmsoms/oms-api-client/-/tree/master?ref_type=heads].
+This tool queries relevant rates from OMS using the [oms-api-client](https://gitlab.cern.ch/cmsoms/oms-api-client/-/tree/master?ref_type=heads).
 
 It is best to set up this area in your e.g. `web.cern.ch` area, where you can view it on a website directly.
 
