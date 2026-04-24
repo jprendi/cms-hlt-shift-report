@@ -220,8 +220,8 @@
     ?>
 
     <!-- list other directories -->
-    <div id="directory-listing" class="container-fluid">
-      <h4><a id="directories">Directories</a></h4>
+<div id="directory-listing" class="container-fluid">
+      <h4><a id="directories">Directories & Reports</a></h4>
       <?
         $dir_names = array();
         foreach (glob("*") as $dir_name) {
@@ -230,26 +230,26 @@
           }
           array_push($dir_names, $dir_name);
         }
+        
+        // --- OPEN THE LIST AND ALWAYS SHOW THE REPORT ---
+        echo "<ul>";
+        echo "<li style=\"margin-bottom: 8px;\"><a href=\"hlt_shift_report.html\"><strong>📋 View HLT Shift Report</strong></a></li>";
+
+        // --- CHECK FOR OTHER DIRECTORIES ---
         if (count($dir_names) == 0) {
-          echo "<span class=\"empty-text\">No directories to display</span>";
+          echo "<li><span class=\"empty-text\">No other directories to display</span></li>";
         } else {
-          echo "<ul>";
           sort($dir_names);
-	            foreach($dir_names as $dir_name) {
-            if ( $dir_name == "ratemon"){
-              echo "<li><a href=\"ratemon/ratemon//\">RateMon</a></li>";
-	    }
-            else{
-            echo "<li><a href=\"$dir_name\">$dir_name</a></li>";
-            }
-	  } 
-	 /*  foreach($dir_names as $dir_name) {
+          foreach($dir_names as $dir_name) {
             echo "<li><a href=\"$dir_name\">$dir_name</a></li>";
           }
-	  echo "</ul>";
-	  */	}
+        }
+        
+        // --- CLOSE THE LIST ---
+        echo "</ul>";
       ?>
     </div>
+
 
     <!-- list plots -->
     <div id="plot-listing" class="container-fluid">
