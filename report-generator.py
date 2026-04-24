@@ -265,9 +265,12 @@ def generate_recent_reports():
 </head>
 <body>
 <div class="instructions">
-  <strong>Instructions:</strong> Select all content in the box below (Cmd+A or Ctrl+A inside the box),
-  copy (Cmd+C), then paste directly into the editor field on the rctools page.
-  Hyperlinks should be preserved automatically.
+  <strong>Instructions:</strong>
+  <ol>
+    <li>Review the rates below. <strong>Important:</strong> Always verify these values by viewing the diagnostic plots directly on <a href="https://cmsoms.cern.ch/" target="_blank">OMS</a>.</li>
+    <li>Select all content in the box below (use the button or Cmd+A / Ctrl+A inside the box).</li>
+    <li>Copy (Cmd+C) and paste directly into the editor field on the RCTools page.</li>
+  </ol>
 </div>
 <div class="report-box" id="report" contenteditable="true">
 {html_body}
@@ -292,7 +295,9 @@ function selectReport() {{
     with open(report_path, "w") as f:
         f.write(html)
     print(f"\nShift report written to: {report_path}")
-    print("Open it in a browser, click 'Select all', copy, and paste into CKEditor.")
+    print("1. Open it in a browser.")
+    print("2. Review rates and VERIFY with plots on OMS: https://cmsoms.cern.ch/")
+    print("3. Click 'Select all', copy, and paste into RCTools.")
 
 if __name__ == "__main__":
     generate_recent_reports()
