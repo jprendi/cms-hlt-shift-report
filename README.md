@@ -1,3 +1,11 @@
+# HLT Shift Report Generator
+
+This tool queries relevant rates from [OMS](https://cmsoms.cern.ch/) using the [oms-api-client](https://gitlab.cern.ch/cmsoms/oms-api-client/-/tree/master?ref_type=heads) and generates a formatted report for HLT shifts.
+
+## ⚠️ Important Note
+**This tool is a helper for summarizing rates, but it does NOT replace manual plot inspection.**
+Always view the full diagnostic plots directly on **[OMS](https://cmsoms.cern.ch/)** to ensure data quality and identify potential issues that automated rate summaries might miss.
+
 # Use on lxplus via web.cern.ch
 
 1. Clone the repository into your `www` (or equivalent) directory on lxplus:
