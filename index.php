@@ -221,35 +221,9 @@
 
     <!-- list other directories -->
 <div id="directory-listing" class="container-fluid">
-      <h4><a id="directories">Directories & Reports</a></h4>
-      <?
-        $dir_names = array();
-        foreach (glob("*") as $dir_name) {
-          if (!is_dir($dir_name) || !show_entry($dir_name)) {
-            continue;
-          }
-          array_push($dir_names, $dir_name);
-        }
-        
-        // --- OPEN THE LIST AND ALWAYS SHOW THE REPORT ---
-        echo "<ul>";
-        echo "<li style=\"margin-bottom: 8px;\"><a href=\"hlt_shift_report.html\"><strong>📋 View HLT Shift Report</strong></a></li>";
-
-        // --- CHECK FOR OTHER DIRECTORIES ---
-        if (count($dir_names) == 0) {
-          echo "<li><span class=\"empty-text\">No other directories to display</span></li>";
-        } else {
-          sort($dir_names);
-          foreach($dir_names as $dir_name) {
-            echo "<li><a href=\"$dir_name\">$dir_name</a></li>";
-          }
-        }
-        
-        // --- CLOSE THE LIST ---
-        echo "</ul>";
-      ?>
-    </div>
-
+  <h4>HLT Shift Report</h4>
+  <iframe src="hlt_shift_report.html" style="width:100%; height:700px; border:1px solid #ddd; border-radius:6px;"></iframe>
+</div>
 
     <!-- list plots -->
     <div id="plot-listing" class="container-fluid">
