@@ -218,12 +218,18 @@ def generate_recent_reports():
 
             for b in good_blocks:
                 n_ls = b["end"] - b["start"] + 1
+                start_ls = b["start"]
+                end_ls = b["end"]
+
+                l1_url = f"https://cmsoms.cern.ch/cms/triggers/l1_rates?cms_run={run_number}&cms_ls_from={start_ls}&cms_ls_to={end_ls}&props.20639_19388.selectedCells=Physics:2&props.19391_19388.selectedCells=Total%20L1A:2,Total%20before%20deadtime:2&props.19393_19388.selectedCells=Total:2&props.19394_19388.selectedCells=Total:2"
+                hlt_url = f"https://cmsoms.cern.ch/cms/triggers/hlt_trigger_rates?props.21024_21019.selectedCells=Physics:2&props.21026_21019.selectedCells=Physics*:2,Scouting*:2,Parking*:2&cms_run={run_number}&cms_ls_from={start_ls}&cms_ls_to={end_ls}"
+
                 html_body += f'''\
-      <li><strong>{b["ps_name"]}</strong> (LS {b["start"]}–{b["end"]}, {n_ls} LS, PU ~{b["avg_pu"]:.1f})
+      <li><strong>{b["ps_name"]}</strong> (LS {start_ls}–{end_ls}, {n_ls} LS, PU ~{b["avg_pu"]:.1f})
         <ul>
-          <li>Total L1T rate ~{b["avg_l1_pre"]:.1f} kHz (pre-dt), ~{b["avg_l1_post"]:.1f} kHz (post-dt)</li>
+          <li>Total L1T rate ~{b["avg_l1_pre"]:.1f} kHz (pre-dt), ~{b["avg_l1_post"]:.1f} kHz (post-dt) (<a href="{l1_url}" target="_blank">link to L1T values</a>)</li>
           <li>Total dt ~{b["avg_dt"]:.1f}%, beam-active dt ~{b["avg_dt_bact"]:.1f}%</li>
-          <li>HLT Physics* ~{b["avg_hlt_phys"]:.1f} kHz, Scouting ~{b["avg_hlt_scout"]:.1f} kHz, Parking ~{b["avg_hlt_park"]:.1f} kHz</li>
+          <li>HLT Physics* ~{b["avg_hlt_phys"]:.1f} kHz, Scouting ~{b["avg_hlt_scout"]:.1f} kHz, Parking ~{b["avg_hlt_park"]:.1f} kHz (<a href="{hlt_url}" target="_blank">link to HLT values</a>)</li>
         </ul>
       </li>\n'''
 
@@ -235,7 +241,7 @@ def generate_recent_reports():
 <html>
 <head>
 <meta charset="utf-8">
-<title>HLT Shift Report</title>
+<title>HLT DATA QUALITY FEEDBACK</title>
 <style>
   body {{
     font-family: Arial, sans-serif;
@@ -301,4 +307,3 @@ function selectReport() {{
 
 if __name__ == "__main__":
     generate_recent_reports()
-
